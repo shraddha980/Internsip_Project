@@ -1,10 +1,7 @@
 
 name: workflow
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 permissions:
   id-token: write
