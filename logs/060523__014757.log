@@ -1,0 +1,79 @@
+[2023-05-06 01:47:59,462] 15 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Ingestion <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-05-06 01:47:59,462] 22 root - INFO - Exporting collection data as pandas dataframe
+[2023-05-06 01:47:59,462] 29 root - INFO - Reading data from database: BANK_LEADS and collection: LEADS
+[2023-05-06 01:48:11,247] 32 root - INFO - Found columns: Index(['_id', 'age', 'job', 'marital', 'education', 'default', 'housing',
+       'loan', 'contact', 'month', 'day_of_week', 'duration', 'campaign',
+       'pdays', 'previous', 'poutcome', 'emp.var.rate', 'cons.price.idx',
+       'cons.conf.idx', 'euribor3m', 'nr.employed', 'y'],
+      dtype='object')
+[2023-05-06 01:48:11,247] 34 root - INFO - Dropping column: _id 
+[2023-05-06 01:48:11,342] 36 root - INFO - Row and columns in df: (164752, 21)
+[2023-05-06 01:48:11,342] 28 root - INFO - Save data in feature store
+[2023-05-06 01:48:11,451] 34 root - INFO - Create feature store folder if not available
+[2023-05-06 01:48:11,451] 38 root - INFO - Save df to feature store folder
+[2023-05-06 01:48:12,674] 43 root - INFO - split dataset into train and test set
+[2023-05-06 01:48:12,800] 47 root - INFO - create dataset directory folder if not available
+[2023-05-06 01:48:12,800] 52 root - INFO - Save df to feature store folder
+[2023-05-06 01:48:14,133] 64 root - INFO - Data ingestion artifact: DataIngestionArtifact(feature_store_file_path='E:\\Lead_Classification-main\\artifact\\06052023__014759\\data_ingestion\\feature_store\\bank-additional-full.csv', train_file_path='E:\\Lead_Classification-main\\artifact\\06052023__014759\\data_ingestion\\dataset\\train.csv', test_file_path='E:\\Lead_Classification-main\\artifact\\06052023__014759\\data_ingestion\\dataset\\test.csv')
+[2023-05-06 01:48:14,399] 21 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Validation >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2023-05-06 01:48:14,399] 94 root - INFO - Reading base dataframe
+[2023-05-06 01:48:14,509] 97 root - INFO - Replace na value in base df
+[2023-05-06 01:48:14,509] 99 root - INFO - Drop null values colums from base df
+[2023-05-06 01:48:14,525] 102 root - INFO - Reading train dataframe
+[2023-05-06 01:48:14,776] 104 root - INFO - Reading test dataframe
+[2023-05-06 01:48:14,854] 107 root - INFO - Drop null values colums from train df
+[2023-05-06 01:48:14,917] 109 root - INFO - Drop null values colums from test df
+[2023-05-06 01:48:14,933] 118 root - INFO - Is all required columns present in train df
+[2023-05-06 01:48:14,933] 120 root - INFO - Is all required columns present in test df
+[2023-05-06 01:48:14,933] 131 root - INFO - Write reprt in yaml file
+[2023-05-06 01:48:14,933] 136 root - INFO - Data validation artifact: DataValidationArtifact(report_file_path='E:\\Lead_Classification-main\\artifact\\06052023__014759\\data_validation\\report.yaml')
+[2023-05-06 01:48:14,933] 22 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Transformation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-05-06 01:48:15,765] 79 root - INFO - Before resampling in training set Input: (131801, 20) Target:(131801,)
+[2023-05-06 01:49:37,053] 83 root - INFO - After resampling in training set Input: (233958, 20) Target:(233958,)
+[2023-05-06 01:49:37,053] 86 root - INFO - Before resampling in testing set Input: (32951, 20) Target:(32951,)
+[2023-05-06 01:49:42,658] 90 root - INFO - After resampling in testing set Input: (58392, 20) Target:(58392,)
+[2023-05-06 01:49:42,752] 43 root - INFO - Enter the save object method of utils
+[2023-05-06 01:49:42,752] 47 root - INFO - Exited the save object method of utils
+[2023-05-06 01:49:42,752] 43 root - INFO - Enter the save object method of utils
+[2023-05-06 01:49:42,752] 47 root - INFO - Exited the save object method of utils
+[2023-05-06 01:49:42,752] 118 root - INFO - Data transformation object DataTransformationArtifact(transform_object_path='E:\\Lead_Classification-main\\artifact\\06052023__014759\\data_transformation\\transformer\\transformer.pkl', transformed_train_path='E:\\Lead_Classification-main\\artifact\\06052023__014759\\data_transformation\\transformed\\train.npz', transformed_test_path='E:\\Lead_Classification-main\\artifact\\06052023__014759\\data_transformation\\transformed\\test.npz', target_encoder_path='E:\\Lead_Classification-main\\artifact\\06052023__014759\\data_transformation\\target_encoder\\target_encoder.pkl')
+[2023-05-06 01:49:42,768] 19 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Model Trainer >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2023-05-06 01:49:42,768] 35 root - INFO - Loading Train Array and Test Array
+[2023-05-06 01:49:42,815] 39 root - INFO - Splitting input feature into Train Array and Test Array
+[2023-05-06 01:49:42,815] 43 root - INFO - Train Model
+[2023-05-06 01:50:17,075] 46 root - INFO - Making Predictions and calculating F1_score for X_train
+[2023-05-06 01:50:21,310] 50 root - INFO - Making Predications and calculating f1_score for X_tes
+[2023-05-06 01:50:22,283] 54 root - INFO - train_score = 1.0 and test_score = 0.9953558773951633
+[2023-05-06 01:50:22,283] 56 root - INFO - Checking if the model is underfitting or not 
+[2023-05-06 01:50:22,283] 62 root - INFO - Checking if the model is Overfitting or not
+[2023-05-06 01:50:22,283] 69 root - INFO - saving model object
+[2023-05-06 01:50:22,283] 43 root - INFO - Enter the save object method of utils
+[2023-05-06 01:50:22,393] 47 root - INFO - Exited the save object method of utils
+[2023-05-06 01:50:22,393] 72 root - INFO - Preparing Model Artifact
+[2023-05-06 01:50:22,393] 78 root - INFO - Model Trainer Artifact : ModelTrainerArtifact(model_path='E:\\Lead_Classification-main\\artifact\\06052023__014759\\model_trainer\\model\\model.pkl', f1_train_score=1.0, f1_test_score=0.9953558773951633)
+[2023-05-06 01:50:22,409] 24 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Model Evaluation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-05-06 01:50:22,409] 40 root - INFO - If saved model has model we will compare which model is best trained or                          model from saved folder
+[2023-05-06 01:50:22,409] 26 root - INFO - dir_name : []
+[2023-05-06 01:50:22,409] 45 root - INFO - Model Evaluation Artifact : ModelEvaluationArtifact(is_model_accepted=True, improved_accuracy=None)
+[2023-05-06 01:50:22,409] 34 root - INFO - Loading all objects
+[2023-05-06 01:50:22,409] 53 root - INFO - inside load object function: E:\Lead_Classification-main\artifact\06052023__014759\data_transformation\transformer\transformer.pkl
+[2023-05-06 01:50:22,409] 53 root - INFO - inside load object function: E:\Lead_Classification-main\artifact\06052023__014759\model_trainer\model\model.pkl
+[2023-05-06 01:50:22,409] 53 root - INFO - inside load object function: E:\Lead_Classification-main\artifact\06052023__014759\data_transformation\target_encoder\target_encoder.pkl
+[2023-05-06 01:50:22,409] 39 root - INFO - Saving object in Pusher Directory
+[2023-05-06 01:50:22,409] 43 root - INFO - Enter the save object method of utils
+[2023-05-06 01:50:22,409] 47 root - INFO - Exited the save object method of utils
+[2023-05-06 01:50:22,409] 43 root - INFO - Enter the save object method of utils
+[2023-05-06 01:50:22,409] 47 root - INFO - Exited the save object method of utils
+[2023-05-06 01:50:22,409] 43 root - INFO - Enter the save object method of utils
+[2023-05-06 01:50:22,409] 47 root - INFO - Exited the save object method of utils
+[2023-05-06 01:50:22,409] 44 root - INFO - Saving Model in Saved Model Directory
+[2023-05-06 01:50:22,409] 26 root - INFO - dir_name : []
+[2023-05-06 01:50:22,409] 26 root - INFO - dir_name : []
+[2023-05-06 01:50:22,409] 26 root - INFO - dir_name : []
+[2023-05-06 01:50:22,409] 43 root - INFO - Enter the save object method of utils
+[2023-05-06 01:50:22,409] 47 root - INFO - Exited the save object method of utils
+[2023-05-06 01:50:22,409] 43 root - INFO - Enter the save object method of utils
+[2023-05-06 01:50:22,409] 47 root - INFO - Exited the save object method of utils
+[2023-05-06 01:50:22,409] 43 root - INFO - Enter the save object method of utils
+[2023-05-06 01:50:22,409] 47 root - INFO - Exited the save object method of utils
+[2023-05-06 01:50:22,409] 57 root - INFO -  Model Pusher Artifact : ModelPusherArtifact(pusher_model_dir='E:\\Lead_Classification-main\\artifact\\06052023__014759\\model_pusher\\saved_models', saved_model_dir='saved_models')

@@ -1,0 +1,34 @@
+[2023-05-06 01:42:15,756] 15 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Ingestion <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-05-06 01:42:15,756] 22 root - INFO - Exporting collection data as pandas dataframe
+[2023-05-06 01:42:15,756] 29 root - INFO - Reading data from database: BANK_LEADS and collection: LEADS
+[2023-05-06 01:42:28,885] 32 root - INFO - Found columns: Index(['_id', 'age', 'job', 'marital', 'education', 'default', 'housing',
+       'loan', 'contact', 'month', 'day_of_week', 'duration', 'campaign',
+       'pdays', 'previous', 'poutcome', 'emp.var.rate', 'cons.price.idx',
+       'cons.conf.idx', 'euribor3m', 'nr.employed', 'y'],
+      dtype='object')
+[2023-05-06 01:42:28,885] 34 root - INFO - Dropping column: _id 
+[2023-05-06 01:42:28,978] 36 root - INFO - Row and columns in df: (164752, 21)
+[2023-05-06 01:42:28,978] 28 root - INFO - Save data in feature store
+[2023-05-06 01:42:29,088] 34 root - INFO - Create feature store folder if not available
+[2023-05-06 01:42:29,088] 38 root - INFO - Save df to feature store folder
+[2023-05-06 01:42:30,346] 43 root - INFO - split dataset into train and test set
+[2023-05-06 01:42:30,456] 47 root - INFO - create dataset directory folder if not available
+[2023-05-06 01:42:30,472] 52 root - INFO - Save df to feature store folder
+[2023-05-06 01:42:31,859] 64 root - INFO - Data ingestion artifact: DataIngestionArtifact(feature_store_file_path='E:\\Lead_Classification-main\\artifact\\06052023__014215\\data_ingestion\\feature_store\\bank-additional-full.csv', train_file_path='E:\\Lead_Classification-main\\artifact\\06052023__014215\\data_ingestion\\dataset\\train.csv', test_file_path='E:\\Lead_Classification-main\\artifact\\06052023__014215\\data_ingestion\\dataset\\test.csv')
+[2023-05-06 01:42:32,123] 21 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Validation >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2023-05-06 01:42:32,123] 94 root - INFO - Reading base dataframe
+[2023-05-06 01:42:32,233] 97 root - INFO - Replace na value in base df
+[2023-05-06 01:42:32,233] 99 root - INFO - Drop null values colums from base df
+[2023-05-06 01:42:32,260] 102 root - INFO - Reading train dataframe
+[2023-05-06 01:42:32,500] 104 root - INFO - Reading test dataframe
+[2023-05-06 01:42:32,575] 107 root - INFO - Drop null values colums from train df
+[2023-05-06 01:42:32,638] 109 root - INFO - Drop null values colums from test df
+[2023-05-06 01:42:32,661] 118 root - INFO - Is all required columns present in train df
+[2023-05-06 01:42:32,661] 120 root - INFO - Is all required columns present in test df
+[2023-05-06 01:42:32,661] 131 root - INFO - Write reprt in yaml file
+[2023-05-06 01:42:32,661] 136 root - INFO - Data validation artifact: DataValidationArtifact(report_file_path='E:\\Lead_Classification-main\\artifact\\06052023__014215\\data_validation\\report.yaml')
+[2023-05-06 01:42:32,661] 22 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Transformation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-05-06 01:42:33,581] 79 root - INFO - Before resampling in training set Input: (131801, 20) Target:(131801,)
+[2023-05-06 01:43:47,965] 83 root - INFO - After resampling in training set Input: (233958, 20) Target:(233958,)
+[2023-05-06 01:43:47,965] 86 root - INFO - Before resampling in testing set Input: (32951, 20) Target:(32951,)
+[2023-05-06 01:43:53,469] 90 root - INFO - After resampling in testing set Input: (58392, 20) Target:(58392,)
