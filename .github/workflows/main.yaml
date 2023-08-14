@@ -68,7 +68,7 @@ jobs:
     
   - name: Pull docker image
     run: |
-      docker image pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{secrets.ECR_REPOSITORY_NAME}}:latest
+      docker pull sha256:8a6cefb0d6fc56002e50a8f22a0c6f06eb51ea6032f0156099fcc8aa0b2dee1e
 
       
   - name: Run Docker Image to serve users
