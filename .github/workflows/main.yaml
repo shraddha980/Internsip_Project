@@ -71,7 +71,7 @@ jobs:
       docker image pull 610577909467.dkr.ecr.ap-south-1.amazonaws.com/customer_segmentation:latest
   - name: Run Docker Image to serve users
     run: |
-      docker run -d -p 80:8080 --name=customer_segmentation -e 'MONGO_DB_URL=${{ secrets.MONGO_DB_URL }}' -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}'  610577909467.dkr.ecr.ap-south-1.amazonaws.com.customer_segmentation:latest
+      docker run -d -p 80:8080 --name=customer_segmentation -e MONGO_DB_URL=mongodb+srv://BackOrderPropagation:shraddha123@cluster0.ydatbkn.mongodb.net/?retryWrites=true&w=majority -e AWS_ACCESS_KEY_ID=AKIAY4KKHQ3N3ZDDTNQQ -e AWS_SECRET_ACCESS_KEY=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 -e AWS_REGION=ap-south-1  610577909467.dkr.ecr.ap-south-1.amazonaws.com.customer_segmentation:latest
       
   - name: Docker System Prune to Remove Old Images
     run: |
