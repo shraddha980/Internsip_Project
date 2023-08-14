@@ -1,7 +1,7 @@
 version: "2"
 services:
  application:
-    image: latest
+    image: "customer_segmentation:latest"
     container_name: customer_segmentation
     ports:
       - "8080:8080"
