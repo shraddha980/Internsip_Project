@@ -71,8 +71,8 @@ jobs:
       docker image pull 610577909467.dkr.ecr.ap-south-1.amazonaws.com/customer_segmentation:latest
   - name: Run Docker Image to serve users
     run: |
-      docker run -d -p 80:8080 --name=customer_segmentation -e 'MONGO_DB_URL=${{ secrets.MONGO_DB_URL }}' -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}'  ${{secrets.AWS_ECR_LOGIN_URI}}/${{secrets.ECR_REPOSITORY_NAME}}:latest
-      #export IMAGE_NAME=610577909467.dkr.ecr.ap-south-1.amazonaws.com/customer_segmentation:latest AWS_ACCESS_KEY_ID="${{secrets.AWS_ACCESS_KEY_ID}}" AWS_SECRET_ACCESS_KEY="${{secrets.AWS_SECRET_ACCESS_KEY}}" AWS_DEFAULT_REGION=${{secrets.AWS_REGION}} BUCKET_NAME=${{secrets.BUCKET_NAME}} "MONGO_DB_URL=${{secrets.MONGO_DB_URL}}" && docker compose up -d
+      docker run -d -p 80:8080 --name=customer_segmentation -e 'MONGO_DB_URL=${{ secrets.MONGO_DB_URL }}' -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}'  610577909467.dkr.ecr.ap-south-1.amazonaws.com.customer_segmentation:latest
+      
   - name: Docker System Prune to Remove Old Images
     run: |
       docker system prune -f
