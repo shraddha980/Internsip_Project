@@ -6,10 +6,10 @@ services:
     ports:
       - "8080:8080"
     environment:
-        - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-        - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-        - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
-        - MONGO_DB_URL=${MONGO_DB_URL}
-        - BUCKET_NAME=${BUCKET_NAME}
-        - AWS_ECR_LOGIN_URI=${AWS_ECR_LOGIN_URI}
-        - ECR_REPOSITORY_NAME=${ECR_REPOSITORY_NAME}
+        - AWS_ACCESS_KEY_ID=AKIAY4KKHQ3N3ZDDTNQQ
+        - AWS_SECRET_ACCESS_KEY=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
+        - AWS_DEFAULT_REGION=ap-south-1
+        - MONGO_DB_URL=mongodb+srv://BackOrderPropagation:shraddha123@cluster0.ydatbkn.mongodb.net/?retryWrites=true&w
+        - BUCKET_NAME=shraddhacustomersegmentation
+        - AWS_ECR_LOGIN_URI=610577909467.dkr.ecr.ap-south-1.amazonaws.com
+        - ECR_REPOSITORY_NAME=customer_segmentation
