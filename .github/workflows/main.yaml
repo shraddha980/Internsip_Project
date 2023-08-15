@@ -84,8 +84,8 @@ jobs:
       - name: Run Docker Image to serve users
         run: |
          docker rm customerrepository
-         docker run -d -p 80:8080 --name=customerrepository 412816140797.dkr.ecr.ap-south-1.amazonaws.com/customerrepository:latest -e 'MONGO_DB_URL=${{ secrets.MONGO_DB_URL }}' -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}' 
-
+         docker run -d -p 80:8080 412816140797.dkr.ecr.ap-south-1.amazonaws.com/customerrepository:latest 
+         
       - name: Clean previous images and containers
         run: |
          docker system prune -f
