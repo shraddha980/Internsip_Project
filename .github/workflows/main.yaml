@@ -83,7 +83,6 @@ jobs:
      
       - name: Run Docker Image to serve users
         run: |
-         docker rm customerrepository
          docker run -d -p 80:8080 412816140797.dkr.ecr.ap-south-1.amazonaws.com/customerrepository:latest 
          
       - name: Clean previous images and containers
