@@ -85,6 +85,4 @@ jobs:
         run: |
          docker run -d -p 80:8080 412816140797.dkr.ecr.ap-south-1.amazonaws.com/customerrepository:latest 
          
-      - name: Clean previous images and containers
-        run: |
-         docker system prune -f
+      
