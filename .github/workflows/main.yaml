@@ -45,7 +45,7 @@ jobs:
        docker tag customerrepository:latest 412816140797.dkr.ecr.ap-south-1.amazonaws.com/customerrepository:latest
        docker push 412816140797.dkr.ecr.ap-south-1.amazonaws.com/customerrepository:latest
 
- Continuous-Deployment:
+Continuous-Deployment:
   needs: build-and-push-ecr-image
   runs-on: self-hosted
   steps:
