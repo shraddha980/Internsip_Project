@@ -83,7 +83,7 @@ jobs:
 
       - name: Stop and remove customerrepository container if running
         run: |
-         docker ps -q --filter "name=customerrepository" | grep -q . && docker stop sensor && docker rm -fv customerrepository
+         docker ps -q --filter "name=customerrepository" | grep -q . && docker stop customerrepository && docker rm -fv customerrepository
        
       - name: Run Docker Image to serve users
         run: |
