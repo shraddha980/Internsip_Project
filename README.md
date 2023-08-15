@@ -37,7 +37,7 @@ sudo sh get-docker.sh
 sudo usermod -aG docker ubuntu
 newgrp docker
 '''....
-nnnn....llllll.......shraddha
+nnnn....llllll.......shraddha...
 
 
 pppp
