@@ -41,7 +41,7 @@ jobs:
        # Build a docker container and
        # push it to ECR so that it can
        # be deployed to ECS.
-       ddocker build -t customerrepository .
+       docker build -t customerrepository .
        docker tag customerrepository:latest 412816140797.dkr.ecr.ap-south-1.amazonaws.com/customerrepository:latest
        docker push 412816140797.dkr.ecr.ap-south-1.amazonaws.com/customerrepository:latest
 
